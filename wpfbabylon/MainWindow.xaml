@@ -8,7 +8,7 @@
         xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
         mc:Ignorable="d"
-        Title="Wpf+CefSharp+Babylon.js" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        Title="Wpf+MahApps+CefSharp+Babylon.js" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
             <MenuItem Header="File">
                 <MenuItem Header="Open"></MenuItem>
                 <Separator/>
-                <MenuItem Header="Quit"></MenuItem>
+                <MenuItem Header="Quit" Click="OnQuit"></MenuItem>
             </MenuItem>
             <MenuItem Header="Dev">
                 <MenuItem Header="Open Dev Tools" Click="OnOpenDevTools"></MenuItem>

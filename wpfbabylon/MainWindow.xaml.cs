@@ -41,5 +41,18 @@ namespace wpfbabylon
         {
             CefBrowser.ShowDevTools();
         }
+
+        /// <summary>
+        /// File-Quit Click Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnQuit(object sender, RoutedEventArgs e)
+        {
+            if( MessageBox.Show("Are you sure want to quit?", "Quit", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
     }
 }
