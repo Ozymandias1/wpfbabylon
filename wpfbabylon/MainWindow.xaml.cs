@@ -28,6 +28,8 @@ namespace wpfbabylon
 
             // set target Frame rate to 60.0
             CefBrowser.BrowserSettings.WindowlessFrameRate = 60;
+            CefBrowser.BrowserSettings.FileAccessFromFileUrls = CefState.Enabled;
+            CefBrowser.BrowserSettings.UniversalAccessFromFileUrls = CefState.Enabled;
             // load page from disk
             CefBrowser.Address = string.Format("{0}WebResources\\index.html", AppDomain.CurrentDomain.BaseDirectory);
         }
