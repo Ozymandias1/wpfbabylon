@@ -77,6 +77,8 @@ namespace wpfbabylon
 
                 string funcString = $"loadObj(\'{dirPath}\',\'{fileNameOnly}\')";
                 CefBrowser.ExecuteScriptAsync(funcString);
+
+                StatusBarText.Content = fileNameOnly;
             }
         }
     }

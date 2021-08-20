@@ -30,7 +30,7 @@
             <wpf:ChromiumWebBrowser x:Name="CefBrowser"></wpf:ChromiumWebBrowser>
         </DockPanel>
         <StatusBar Grid.Row="2">
-            <StatusBarItem>Test</StatusBarItem>
+            <StatusBarItem Name="StatusBarText"></StatusBarItem>
         </StatusBar>
     </Grid>
 </mah:MetroWindow>
