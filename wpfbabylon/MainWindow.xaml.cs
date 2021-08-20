@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using CefSharp;
 
 namespace wpfbabylon
 {
@@ -27,6 +28,18 @@ namespace wpfbabylon
 
             // set target Frame rate to 60.0
             CefBrowser.BrowserSettings.WindowlessFrameRate = 60;
+            // load page from disk
+            CefBrowser.Address = string.Format("{0}WebResources\\index.html", AppDomain.CurrentDomain.BaseDirectory);
+        }
+
+        /// <summary>
+        /// open cefsharp browser's dev tools
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnOpenDevTools(object sender, RoutedEventArgs e)
+        {
+            CefBrowser.ShowDevTools();
         }
     }
 }

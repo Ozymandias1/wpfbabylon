@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Wpf+CefSharp+Babylon.js</title>
+    <script src="js/babylon.js"></script>
+    <style>
+        body{
+            margin: 0px;
+            overflow: hidden;
+        }
+        .babylonjsContainer {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="babylonjsContainer" id="babylonjsContainer"></canvas>
+    <script>
+        var canvas = document.getElementById('babylonjsContainer');
+        var engine = new BABYLON.Engine(canvas, true, {
+            preserveDrawingBuffer: true,
+            stencil: true
+        });
+        var createScene = function () {
+            var scene = new BABYLON.Scene(engine);
+            var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 10, new BABYLON.Vector3(0, 0, 0), scene);
+            camera.attachControl(canvas, true);
+            var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0, 1, 0), scene);
+            var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene, false, BABYLON.Mesh.FRONTSIDE);
+            sphere.position.y = 1;
+            var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene, false);
+            return scene;
+        }
+        var scene = createScene();
+        engine.runRenderLoop(function () {
+            scene.render();
+        });
+        window.addEventListener('resize', function () {
+            engine.resize();
+        });
+    </script>
+</body>
+</html>

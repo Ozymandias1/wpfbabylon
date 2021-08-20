@@ -22,9 +22,12 @@
                 <Separator/>
                 <MenuItem Header="Quit"></MenuItem>
             </MenuItem>
+            <MenuItem Header="Dev">
+                <MenuItem Header="Open Dev Tools" Click="OnOpenDevTools"></MenuItem>
+            </MenuItem>
         </Menu>
-        <DockPanel Grid.Row="1" Background="Red">
-            <wpf:ChromiumWebBrowser x:Name="CefBrowser" Address="https://playground.babylonjs.com/"></wpf:ChromiumWebBrowser>
+        <DockPanel Grid.Row="1">
+            <wpf:ChromiumWebBrowser x:Name="CefBrowser"></wpf:ChromiumWebBrowser>
         </DockPanel>
         <StatusBar Grid.Row="2">
             <StatusBarItem>Test</StatusBarItem>
