@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using CefSharp;
+using Microsoft.Win32;
+using System.IO;
 
 namespace wpfbabylon
 {
@@ -54,6 +56,27 @@ namespace wpfbabylon
             if( MessageBox.Show("Are you sure want to quit?", "Quit", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 Application.Current.Shutdown();
+            }
+        }
+
+        /// <summary>
+        /// File-Load Obj click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnLoadObj(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog pDlg = new OpenFileDialog();
+            pDlg.Filter = "Wavefront OBJ (*.obj)|*.obj";
+            if( pDlg.ShowDialog() == true )
+            {
+                string fileFullPath = pDlg.FileName;
+
+                string dirPath = System.IO.Path.GetDirectoryName(fileFullPath).Replace("\\", "/") + "/";
+                string fileNameOnly = System.IO.Path.GetFileName(fileFullPath).Replace("\\", "/");
+
+                string funcString = $"loadObj(\'{dirPath}\',\'{fileNameOnly}\')";
+                CefBrowser.ExecuteScriptAsync(funcString);
             }
         }
     }

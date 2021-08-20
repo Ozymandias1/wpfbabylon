@@ -35,8 +35,6 @@
             sphere.position.y = 1;
             var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene, false);
 
-            BABYLON.SceneLoader.ImportMesh("", "js/", "mybox.obj", scene, function (meshes) { });
-
             return scene;
         }
         var scene = createScene();
@@ -46,6 +44,10 @@
         window.addEventListener('resize', function () {
             engine.resize();
         });
+
+        function loadObj(dirPath, fileName) {
+            BABYLON.SceneLoader.ImportMesh("", dirPath, fileName, scene, function (meshes) { });
+        }
     </script>
 </body>
 </html>
