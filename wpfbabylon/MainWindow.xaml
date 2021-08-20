@@ -6,9 +6,26 @@
         xmlns:local="clr-namespace:wpfbabylon"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        Title="Wpf+CefSharp+Babylon.js" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Open"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Quit"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DockPanel Grid.Row="1" Background="Red">
+            
+        </DockPanel>
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>Test</StatusBarItem>
+        </StatusBar>
     </Grid>
 </mah:MetroWindow>
