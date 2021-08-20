@@ -24,6 +24,9 @@ namespace wpfbabylon
         public MainWindow()
         {
             InitializeComponent();
+
+            // set target Frame rate to 60.0
+            CefBrowser.BrowserSettings.WindowlessFrameRate = 60;
         }
     }
 }

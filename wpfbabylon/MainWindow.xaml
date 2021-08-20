@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfbabylon"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
         mc:Ignorable="d"
         Title="Wpf+CefSharp+Babylon.js" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip">
@@ -22,7 +24,7 @@
             </MenuItem>
         </Menu>
         <DockPanel Grid.Row="1" Background="Red">
-            
+            <wpf:ChromiumWebBrowser x:Name="CefBrowser" Address="https://playground.babylonjs.com/"></wpf:ChromiumWebBrowser>
         </DockPanel>
         <StatusBar Grid.Row="2">
             <StatusBarItem>Test</StatusBarItem>
