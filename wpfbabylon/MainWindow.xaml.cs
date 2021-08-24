@@ -75,7 +75,7 @@ namespace wpfbabylon
                 string dirPath = System.IO.Path.GetDirectoryName(fileFullPath).Replace("\\", "/") + "/";
                 string fileNameOnly = System.IO.Path.GetFileName(fileFullPath).Replace("\\", "/");
 
-                string funcString = $"loadObj(\'{dirPath}\',\'{fileNameOnly}\')";
+                string funcString = $"App.LoadModel(\'{dirPath}\',\'{fileNameOnly}\')";
                 CefBrowser.ExecuteScriptAsync(funcString);
 
                 StatusBarText.Content = fileNameOnly;
