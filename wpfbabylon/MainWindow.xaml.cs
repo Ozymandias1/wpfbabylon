@@ -64,10 +64,10 @@ namespace wpfbabylon
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnLoadObj(object sender, RoutedEventArgs e)
+        private void OnLoadModel(object sender, RoutedEventArgs e)
         {
             OpenFileDialog pDlg = new OpenFileDialog();
-            pDlg.Filter = "Wavefront OBJ (*.obj)|*.obj";
+            pDlg.Filter = "Khronos Group GLTF (*.gltf, *.glb)|*.gltf;*.glb|Wavefront OBJ (*.obj)|*.obj|STL-File (*.stl)|*.stl";
             if( pDlg.ShowDialog() == true )
             {
                 string fileFullPath = pDlg.FileName;
@@ -82,6 +82,11 @@ namespace wpfbabylon
             }
         }
 
+        /// <summary>
+        /// toggle babylon.js's debuglayer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnShowDebugLayer(object sender, RoutedEventArgs e)
         {
             if (MenuShowDebugLayer.IsChecked)
