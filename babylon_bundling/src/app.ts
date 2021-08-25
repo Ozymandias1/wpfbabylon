@@ -1,3 +1,5 @@
+import '@babylonjs/core/Debug/debugLayer';
+import '@babylonjs/inspector';
 import { ArcRotateCamera, Engine, HemisphericLight, MeshBuilder, Scene, Vector3 } from '@babylonjs/core';
 import {LoadModel as ImportModel} from './loader';
 
@@ -67,9 +69,25 @@ window.addEventListener('load', ()=>{
 });
 
 function LoadModel(dirPath: string, fileName: string) {
-    ImportModel(app.Scene, dirPath, fileName);
+    if( app ) {
+        ImportModel(app.Scene, dirPath, fileName);
+    }
+}
+
+function ShowDebugLayer() {
+    if( app ) {
+        app.Scene.debugLayer.show();
+    }
+}
+
+function HideDebugLayer() {
+    if( app ) {
+        app.Scene.debugLayer.hide();
+    }
 }
 
 export {
-    LoadModel
+    LoadModel,
+    ShowDebugLayer,
+    HideDebugLayer
 }

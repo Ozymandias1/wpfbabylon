@@ -81,5 +81,17 @@ namespace wpfbabylon
                 StatusBarText.Content = fileNameOnly;
             }
         }
+
+        private void OnShowDebugLayer(object sender, RoutedEventArgs e)
+        {
+            if (MenuShowDebugLayer.IsChecked)
+            {
+                CefBrowser.ExecuteScriptAsync("App.ShowDebugLayer()");
+            }
+            else
+            {
+                CefBrowser.ExecuteScriptAsync("App.HideDebugLayer()");
+            }
+        }
     }
 }
