@@ -8,7 +8,7 @@
         xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
         mc:Ignorable="d"
-        Title="Wpf+MahApps+CefSharp+Babylon.js" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        Title="Wpf+MahApps+CefSharp+Babylon.js" Height="720" Width="1280" WindowStartupLocation="CenterScreen"
         ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
@@ -23,7 +23,7 @@
                 <MenuItem Header="Quit" Click="OnQuit"></MenuItem>
             </MenuItem>
             <MenuItem Header="Dev">
-                <MenuItem Header="Show Debug Layer" IsCheckable="True" Click="OnShowDebugLayer" x:Name="MenuShowDebugLayer"></MenuItem>
+                <MenuItem Header="Show Debug Layer" IsCheckable="True" IsChecked="True" Click="OnShowDebugLayer" x:Name="MenuShowDebugLayer"></MenuItem>
                 <MenuItem Header="Open Dev Tools" Click="OnOpenDevTools"></MenuItem>
             </MenuItem>
         </Menu>
