@@ -66,6 +66,7 @@ let app: App = null;
 // create app instance when page loaded
 window.addEventListener('load', ()=>{
     app = new App();
+    app.Scene.debugLayer.show();
 });
 
 function LoadModel(dirPath: string, fileName: string) {
